@@ -6,6 +6,13 @@ models:
     #   enabled: true
     columns:
       - name: supply_uuid
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_supplies')
+                field: supply_uuid
         # entity:
         #   type: primary
         #   name: supply

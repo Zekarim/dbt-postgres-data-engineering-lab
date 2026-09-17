@@ -26,6 +26,9 @@ seeds:
 
 models:
   jaffle_shop:
+    +required_tests:
+      unique: 1
+      not_null: 1
     staging:
       +materialized: view
     marts:

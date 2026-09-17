@@ -7,6 +7,13 @@ models:
     # agg_time_dimension: opened_date
     columns:
       - name: location_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_locations')
+                field: location_id
         # entity:
         #   type: primary
         #   name: location

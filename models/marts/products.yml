@@ -6,6 +6,13 @@ models:
     #   enabled: true
     columns:
       - name: product_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
         # entity:
         #   type: primary
         #   name: product
