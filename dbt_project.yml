@@ -24,6 +24,11 @@ seeds:
     jaffle-data:
       +enabled: "{{ var('load_source_data', false) }}"
 
+
+tests:
+  jaffle_shop:
+    +store_failures: true
+
 models:
   jaffle_shop:
     +required_tests:

@@ -37,9 +37,14 @@ models:
       - name: order_total
         description: The total amount of the order in USD including tax.
         data_tests:
-          - average_dollars_spent_greater_than_one:
-              arguments:
-                group_by_column: customer_id
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100
+              config:
+                warn_if: ">0"
+                error_if: ">10"
+              
+            
         # dimension:
         #   type: categorical
         #   name: order_total_dim
