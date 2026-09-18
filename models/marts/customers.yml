@@ -19,6 +19,10 @@ models:
         #   name: customer
       - name: customer_name
         description: Customers' full name.
+        # To add a failure in the tests.
+        # data_tests:
+        #   - not_null
+        #   - unique
         # dimension:
         #   type: categorical
       - name: count_lifetime_orders
